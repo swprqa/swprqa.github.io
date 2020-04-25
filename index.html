@@ -9,13 +9,24 @@
 
 <body>
     <script>
-        console.log('simple bridge test');
+        console.log('Simple bridge test');
+
         vkBridge.subscribe(e => {
             console.log('event', e);
         });
+
         vkBridge.send('VKWebAppInit', {})
-            .then(() => console.log('success'))
-            .catch(() => console.log('error'));
+            .then(() => console.log('success VKWebAppInit'))
+            .catch(() => console.log('error VKWebAppInit'));
+
+        vkBridge.send('VKWebAppGetUserInfoResult', {})
+            .then(() => console.log('success VKWebAppGetUserInfoResult'))
+            .catch(() => console.log('error VKWebAppGetUserInfoResult'));
+
+        vkBridge.send('VKWebAppGetGeodata', {})
+            .then(() => console.log('success VKWebAppGetGeodata'))
+            .catch(() => console.log('error VKWebAppGetGeodata'));
+
     </script>
 </body>
 
