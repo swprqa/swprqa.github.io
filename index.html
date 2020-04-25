@@ -9,9 +9,9 @@
 
 <body>
     <script>
+        console.log('simple bridge test');
         vkBridge.subscribe(e => {
             console.log('event', e);
-            vkBridge.send('VKWebAppGetUserInfo', {}).then(() => console.log('succ')).catch(() => console.log('error'));
         });
         vkBridge.send('VKWebAppInit', {})
             .then(() => console.log('success'))
